@@ -40,11 +40,15 @@ def calculate_mark(df, correct, wrong, category1):
                           if x[j]==y[k]:
                               count+=1
                           else:
+                
                               break
                       except IndexError:
                               pass
-                cal=(2*count)/len(x)
-                df.iloc[i,2]=cal
+                if count==len(y):
+                    cal=(2*count)/len(x)
+                    df.iloc[i,2]=cal
+                else:
+                    df.iloc[i,2]=0
     x = df['Mark'].sum()
     df.at[len(df),'Recorded Response']='Sum:'+str(x)
     df.iloc[len(df)-1,0]="****"
