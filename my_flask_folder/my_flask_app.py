@@ -40,7 +40,6 @@ def calculate_mark(df, correct, wrong, category1):
                           if x[j]==y[k]:
                               count+=1
                           else:
-                              count=0
                               break
                       except IndexError:
                               pass
