@@ -35,11 +35,15 @@ def calculate_mark(df, correct, wrong, category1):
                 x=df.iloc[i,0].split(',')
                 y=df.iloc[i,1].split(',')
                 for j in range(0,len(x)):
-                    try:
-                        if x[j]==y[j]:
-                            count+=1
-                    except IndexError:
-                            pass
+                  for k in range(0,len(y)):
+                      try:
+                          if x[j]==y[k]:
+                              count+=1
+                          else:
+                              count=0
+                              break
+                      except IndexError:
+                              pass
                 cal=(2*count)/len(x)
                 df.iloc[i,2]=cal
     x = df['Mark'].sum()
