@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <title>Result</title>
+</head>
+<body>
+    <h1>Result</h1>
+    <p>Calculated Mark: {{ mark }}</p>
+    <h2>Result Data</h2>
+    {{ result_df | safe }}
+</body>
+</html>
